@@ -1,13 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>card-coupon</ion-title>
+    <ion-back-button slot="start"> </ion-back-button>
+    <ion-title>Tarjeta Cupon</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">card-coupon</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card
+    ><ion-card-content class="ion-text-center">
+      <qrcode
+        [qrdata]="QrCode"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode></ion-card-content
+  ></ion-card>
 </ion-content>

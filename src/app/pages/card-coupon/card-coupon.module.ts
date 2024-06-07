@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { CardCouponPageRoutingModule } from './card-coupon-routing.module';
 
 import { CardCouponPage } from './card-coupon.page';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CardCouponPageRoutingModule
+    CardCouponPageRoutingModule,
+    QRCodeModule,
   ],
-  declarations: [CardCouponPage]
+  declarations: [CardCouponPage],
 })
 export class CardCouponPageModule {}
