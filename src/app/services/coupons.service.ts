@@ -1,9 +1,22 @@
 import { Injectable } from '@angular/core';
+import { Coupon } from '../models/coupons';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CouponsService {
+  constructor() {}
 
-  constructor() { }
+  getCoupons() {
+    return fetch('./assets/data/data.json')
+      .then(async (res) => {
+        const coupons: Coupon[] = (await res.json()) as Coupon[];
+        coupons.forEach((c) => (c.active = false));
+        return Promise.resolve(coupons);
+      })
+      .catch((err) => {
+        console.error(err);
+        return Promise.reject([]);
+      });
+  }
 }
