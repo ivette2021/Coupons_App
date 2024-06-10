@@ -8,9 +8,7 @@ import { NavParams } from '@ionic/angular';
 })
 export class CardCouponPage implements OnInit {
   public QRCode: string;
-  constructor(private navParams: NavParams) {
-    console.log(this.navParams.data['coupons']);
-  }
+  constructor(private navParams: NavParams) {}
 
   ngOnInit() {
     this.QRCode = JSON.stringify(this.navParams.data['coupons']);
